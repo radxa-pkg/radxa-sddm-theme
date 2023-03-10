@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+case $1 in
+    remove)
+        conflicts="breeze"
+        for i in $conflicts
+        do
+            rm "/usr/share/sddm/themes/$i/Main.qml"
+            dpkg-divert --package radxa-sddm-theme --rename --remove "/usr/share/sddm/themes/$i/Main.qml"
+        done
+        ;;
+esac
+
+exit 0

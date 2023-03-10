@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+case $1 in
+    install|upgrade)
+        conflicts="breeze"
+        for i in $conflicts
+        do
+            dpkg-divert --package radxa-sddm-theme --divert "/usr/share/sddm/themes/$i/Main.qml.bak" --rename "/usr/share/sddm/themes/$i/Main.qml"
+        done
+        ;;
+esac
+    
+#DEBHELPER#
+
+exit 0

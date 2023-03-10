@@ -1,0 +1,18 @@
+Source: radxa-sddm-theme
+Maintainer: "Radxa Computer Co., Ltd" <dev@radxa.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.6.0
+Build-Depends: debhelper (>=12~),
+               devscripts,
+               lintian,
+               pandoc,
+
+Package: radxa-sddm-theme
+Architecture: all
+Section: misc
+Priority: optional
+Depends: ${misc:Depends},
+Description: Radxa SDDM theme overrides
+ This package provides sddm-theme overrides to better work
+ on Rockchip platform.
