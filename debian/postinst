@@ -6,7 +6,10 @@ shift
 
 case "$action" in
 	configure|triggered)
-		sed -E "s/x: geometry.*$/x: 0; y: 0; width: 3840; height: 2160/g" "/usr/share/sddm/themes/breeze/Main.qml.bak" > "/usr/share/sddm/themes/breeze/Main.qml"
+		if [ -f /usr/share/sddm/themes/breeze/Main.qml.bak ]
+		then
+			sed -E "s/x: geometry.*$/x: 0; y: 0; width: 3840; height: 2160/g" "/usr/share/sddm/themes/breeze/Main.qml.bak" > "/usr/share/sddm/themes/breeze/Main.qml"
+		fi
 		;;
 esac
 
